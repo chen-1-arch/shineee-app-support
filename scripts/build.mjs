@@ -10,9 +10,11 @@ const sourcePages = {
   "index.html": await readFile(path.join(contentRoot, "index.html"), "utf8"),
   "privacy.html": await readFile(path.join(contentRoot, "privacy.html"), "utf8"),
   "terms.html": await readFile(path.join(contentRoot, "terms.html"), "utf8"),
+  "community.html": await readFile(path.join(contentRoot, "community.html"), "utf8"),
   "en/index.html": await readFile(path.join(contentRoot, "en", "index.html"), "utf8"),
   "en/privacy.html": await readFile(path.join(contentRoot, "en", "privacy.html"), "utf8"),
   "en/terms.html": await readFile(path.join(contentRoot, "en", "terms.html"), "utf8"),
+  "en/community.html": await readFile(path.join(contentRoot, "en", "community.html"), "utf8"),
 };
 
 const pages = {
@@ -22,6 +24,8 @@ const pages = {
   "/privacy.html": sourcePages["privacy.html"],
   "/terms": sourcePages["terms.html"],
   "/terms.html": sourcePages["terms.html"],
+  "/community": sourcePages["community.html"],
+  "/community.html": sourcePages["community.html"],
   "/en": sourcePages["en/index.html"],
   "/en/": sourcePages["en/index.html"],
   "/en/index.html": sourcePages["en/index.html"],
@@ -29,6 +33,8 @@ const pages = {
   "/en/privacy.html": sourcePages["en/privacy.html"],
   "/en/terms": sourcePages["en/terms.html"],
   "/en/terms.html": sourcePages["en/terms.html"],
+  "/en/community": sourcePages["en/community.html"],
+  "/en/community.html": sourcePages["en/community.html"],
 };
 
 const worker = `const pages = ${JSON.stringify(pages)};
@@ -77,4 +83,4 @@ for (const [relativePath, html] of Object.entries(sourcePages)) {
   await writeFile(outputPath, html, "utf8");
 }
 
-console.log("Built bilingual Shineee! support, privacy, and terms routes.");
+console.log("Built bilingual Shineee! support, privacy, terms, and community routes.");

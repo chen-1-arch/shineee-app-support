@@ -11,6 +11,8 @@ const pages = {
   "/privacy.html": "privacy.html",
   "/terms": "terms.html",
   "/terms.html": "terms.html",
+  "/community": "community.html",
+  "/community.html": "community.html",
   "/en": "en/index.html",
   "/en/": "en/index.html",
   "/en/index.html": "en/index.html",
@@ -18,6 +20,8 @@ const pages = {
   "/en/privacy.html": "en/privacy.html",
   "/en/terms": "en/terms.html",
   "/en/terms.html": "en/terms.html",
+  "/en/community": "en/community.html",
+  "/en/community.html": "en/community.html",
 };
 
 const server = http.createServer(async (request, response) => {
